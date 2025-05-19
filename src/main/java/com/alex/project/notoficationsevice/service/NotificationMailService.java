@@ -11,7 +11,7 @@ public class NotificationMailService {
 
         String stringBuilder = "Dear " + message.getUserEmail() +
                 "\n" +
-                mainMessage;
+                mainMessage + " in project " + message.getProjectId();
 
         message.setMessage(stringBuilder);
 
