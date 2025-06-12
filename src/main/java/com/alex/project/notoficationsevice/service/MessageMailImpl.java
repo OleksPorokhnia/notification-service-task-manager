@@ -5,6 +5,8 @@ import org.springframework.mail.MailException;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 
+import java.util.List;
+
 public class MessageMailImpl implements MessageManager{
     private MailSender mailSender;
     private SimpleMailMessage simpleMailMessage;
@@ -20,7 +22,7 @@ public class MessageMailImpl implements MessageManager{
     @Override
     public void sendMessage(Message message) {
         SimpleMailMessage msg = new SimpleMailMessage(this.simpleMailMessage);
-        msg.setTo(message.getUserEmail());
+        msg.setTo(message.getUserEmail().stream().toString());
         msg.setText(message.getMessage());
 
         try{

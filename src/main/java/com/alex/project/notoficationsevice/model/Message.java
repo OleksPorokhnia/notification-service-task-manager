@@ -1,15 +1,19 @@
 package com.alex.project.notoficationsevice.model;
 
+import org.apache.kafka.common.protocol.types.Field;
+
+import java.util.List;
+
 public class Message {
     private String theme;
     private String message;
     private String projectId;
-    private String userEmail;
+    private List<String> userEmail;
 
     public Message() {
     }
 
-    public Message(String theme, String message, String projectId, String userEmail) {
+    public Message(String theme, String message, String projectId, List<String> userEmail) {
         this.theme = theme;
         this.message = message;
         this.projectId = projectId;
@@ -40,11 +44,11 @@ public class Message {
         this.projectId = projectId;
     }
 
-    public String getUserEmail() {
+    public List<String> getUserEmail() {
         return userEmail;
     }
 
-    public void setUserEmail(String userEmail) {
+    public void setUserEmail(List<String> userEmail) {
         this.userEmail = userEmail;
     }
 }
